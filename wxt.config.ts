@@ -6,7 +6,7 @@ export default defineConfig({
     name: "Actions Workflow Search",
     description: "Search workflows in the GitHub Actions sidebar.",
     homepage_url: "https://github.com/h0x0er/actions-search",
-    version: "0.0.1",
+    version: "0.0.3",
     host_permissions: ["https://github.com/*"],
     browser_specific_settings: {
       gecko: {
