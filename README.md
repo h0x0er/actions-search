@@ -4,22 +4,26 @@ A browser extension that adds a search box to the GitHub Actions sidebar, so you
 
 ## Demo
 
-![demo](assets/search-demo.gif)
+![demo](./assets/search-demo.gif)
 
-## Features
-
-- Search by workflow name or filename
-- Automatically loads all workflows when you start searching
-- Works with GitHub's Turbo navigation (no page reload needed)
-- Supports Chrome, Edge, Firefox, and all Chromium-based browsers
 
 ## Installation
 
-### Chrome / Edge / Brave
-Load the `output/chrome-mv3/` folder as an unpacked extension from `chrome://extensions`.
+1. Go to the [Releases](https://github.com/h0x0er/actions-search/releases) page and download the zip for your browser
+2. Unzip it
+3. Follow the steps for your browser:
 
-### Firefox
-Load the `output/firefox-mv2/` folder as a temporary extension from `about:debugging`.
+**Chrome / Edge / Brave**
+- Open `chrome://extensions` (or `edge://extensions`)
+- Enable **Developer mode** (top right toggle)
+- Click **Load unpacked** and select the unzipped folder
+
+**Firefox**
+- Open `about:debugging#/runtime/this-firefox`
+- Click **Load Temporary Add-on**
+- Select any file inside the unzipped folder
+
+> Note: Firefox temporary add-ons are removed when the browser restarts.
 
 ## Development
 
