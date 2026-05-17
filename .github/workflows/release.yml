@@ -23,10 +23,7 @@ jobs:
 
       - run: npm run zip:all
 
-      - name: Create release
+      - name: Upload to release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release create ${{ github.ref_name }} \
-            --generate-notes \
-            output/*.zip
+        run: gh release upload ${{ github.ref_name }} output/*.zip
