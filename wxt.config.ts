@@ -2,7 +2,7 @@ import { defineConfig } from "wxt";
 
 export default defineConfig({
   outDir: "output",
-  manifest: {
+  manifest: ({ browser }) => ({
     name: "Actions Workflow Search",
     description: "Search workflows in the GitHub Actions sidebar.",
     homepage_url: "https://github.com/h0x0er/actions-search",
@@ -14,5 +14,8 @@ export default defineConfig({
         strict_min_version: "109.0",
       },
     },
-  },
+    ...(browser === "firefox" && {
+      data_collection_permissions: { required: [], optional: [] },
+    }),
+  }),
 });
