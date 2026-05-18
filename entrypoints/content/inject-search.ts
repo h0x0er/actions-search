@@ -41,8 +41,7 @@ export function injectSearch(): boolean {
     searchWorkflows(input.value);
     if (input.value.trim() !== '' && !expanded) {
       expanded = true;
-      await expandAll();
-      input.focus({ preventScroll: true });
+      await expandAll(() => input.focus({ preventScroll: true }));
       searchWorkflows(input.value);
     }
   });

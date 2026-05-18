@@ -9,7 +9,7 @@ function findShowMoreButton(): HTMLButtonElement | null {
   return container.querySelector<HTMLButtonElement>('button');
 }
 
-export async function expandAll(): Promise<void> {
+export async function expandAll(onPageLoaded?: () => void): Promise<void> {
   const pane = document.querySelector<HTMLElement>('div[data-target="split-page-layout.pane"]');
   const savedPaneScroll = pane?.scrollTop ?? 0;
   const lockScroll = () => { if (pane) pane.scrollTop = savedPaneScroll; };
@@ -28,6 +28,7 @@ export async function expandAll(): Promise<void> {
       setTimeout(() => { observer.disconnect(); resolve(); }, 1000);
     });
 
+    onPageLoaded?.();
     await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
   }
 
