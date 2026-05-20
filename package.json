@@ -1,6 +1,6 @@
 {
   "name": "actions-search",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Browser extension to search/filter workflows in the GitHub Actions sidebar",
   "scripts": {
     "dev": "wxt",
